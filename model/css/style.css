@@ -1,0 +1,238 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
+main .restaurants, main .commentCaMarche, main .presentation, main .localisation, header {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+footer {
+  display: grid;
+  justify-items: flex-start;
+  align-items: flex-start;
+}
+
+.list-item {
+  padding: 1.5em 1em;
+  text-align: left;
+  border-radius: 1em;
+  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+  padding: 1em 1.5em;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.btn--gradient {
+  background-image: radial-gradient(100% 50% at 20% 10%, #FF79DA 0%, #9356DC 200%);
+}
+.btn--radius {
+  border-radius: 2em;
+}
+.btn:hover {
+  opacity: 0.8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn__like .heart-hover {
+  position: absolute;
+  top: 0;
+}
+
+header h1 {
+  font-family: "Shrikhand", cursive;
+  padding: 0.8em 0 0.3em 0;
+}
+
+footer {
+  grid-template-columns: repeat(3, 1fr);
+  padding: 1.5em;
+  color: #ffffff;
+  background: #353535;
+  font-family: "Roboto", sans-serif;
+}
+footer h2 {
+  grid-row: 1 / auto;
+  grid-column: 1 / auto;
+  margin: 0 0 1.5rem 0;
+  font-family: "Shrikhand", cursive;
+  font-size: 1.4em;
+  font-weight: normal;
+  justify-self: start;
+}
+footer ul {
+  grid-row: 2 / auto;
+  grid-column: 1 / 4;
+  justify-self: start;
+}
+footer ul li {
+  margin: 0 0 0.5rem 0;
+}
+footer a {
+  color: #ffffff;
+}
+footer a .fa-utensils {
+  padding: 0 1rem 0 0;
+}
+footer a .fa-handshake-angle {
+  padding: 0 0.65rem 0 0;
+}
+
+main {
+  font-family: "Roboto", sans-serif;
+  /* Debut section localisation */
+  /* Fin section localisation */
+  /* Debut section presentation */
+  /* Fin section presentation */
+  /* Debut section commentCaMarche */
+  /* Fin section commentCaMarche */
+  /* Début de section restaurants */
+  /* Fin section restaurants */
+  /* Début section carte */
+}
+main .localisation {
+  padding: 1em;
+  background: #eaeaea;
+  background: linear-gradient(180deg, rgba(173, 173, 173, 0.35) 0%, rgba(234, 234, 234, 0.75) 15%, rgb(234, 234, 234) 100%);
+}
+main .localisation i {
+  padding: 0 0.5em 0 0;
+}
+main .presentation {
+  grid-template-columns: repeat(1, 1fr);
+  padding: 2em 0 3em;
+  background: #f6f6f6;
+  text-align: center;
+}
+main .presentation h2 {
+  padding: 0 1.8em;
+  font-size: 1.5em;
+}
+main .presentation p {
+  padding: 1em 2em 2em;
+}
+main .commentCaMarche {
+  grid-template-columns: repeat(1, 1fr);
+  padding: 3em 1em;
+  margin-bottom: 2.5em;
+}
+main .commentCaMarche h2 {
+  grid-row: 1 / auto;
+  grid-column: 1 / 2;
+  justify-self: start;
+}
+main .commentCaMarche ol {
+  grid-row: 2 / auto;
+  grid-column: 1 / 4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2em;
+  margin: 1em 1em 0;
+  counter-reset: countsection;
+  justify-self: normal;
+}
+@media screen and (max-width: 960px) {
+  main .commentCaMarche ol {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 480px) {
+  main .commentCaMarche ol {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+main .commentCaMarche ol li::before {
+  counter-increment: countsection;
+  content: counter(countsection);
+  position: relative;
+  left: -1.9em;
+  padding: 0.3em 0.6em;
+  background-color: #9356DC;
+  border-radius: 70%;
+  color: #ffffff;
+}
+main .commentCaMarche ol li:hover {
+  background-color: #f2eafb;
+  cursor: pointer;
+}
+main .commentCaMarche ol li:hover i {
+  color: #9356DC;
+}
+main .commentCaMarche ol p {
+  display: inline-block;
+  position: relative;
+  left: -0.7em;
+}
+main .commentCaMarche ol i {
+  padding: 0 1.1em 0 0;
+}
+main .restaurants {
+  background: #f6f6f6;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 3em 1em;
+}
+main .restaurants h2 {
+  grid-row: 1 / auto;
+  grid-column: 1 / 2;
+  justify-self: start;
+  margin-bottom: 1em;
+}
+main .restaurants ul {
+  grid-row: 2 / auto;
+  grid-column: 1 / 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2em;
+  justify-self: normal;
+  margin: 1em 0;
+}
+@media screen and (max-width: 480px) {
+  main .restaurants ul {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 960px) {
+  main .restaurants ul {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+main .restaurants ul li {
+  display: inline-block;
+  width: 100%;
+}
+main .restaurants ul li a {
+  display: block;
+  position: relative;
+  padding: 0 0 0.7rem 0;
+  color: #000000;
+  border-radius: 1.5em;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+main .restaurants ul li a .sticker {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  padding: 0.4em 0.6em;
+  color: #008766;
+  background: #99e2d0;
+  border-radius: 0.2em;
+}
+main .restaurants ul li a img {
+  height: 12.5em;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1em 1em 0 0;
+  margin-bottom: 0.5em;
+}
+main .restaurants ul li a h3,
+main .restaurants ul li a p {
+  padding: 0 1rem 0.3rem;
+}
+main .restaurants ul li a .btn__like {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 1.5rem;
+  font-size: 1.5em;
+  cursor: pointer;
+}

@@ -1,0 +1,210 @@
+@import '_variables';
+@import '_mixins';
+@import '_placeholders';
+@import '_components';
+
+@import 'layout/header';
+@import 'layout/footer';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
+
+
+
+
+main {
+
+    font-family: 'Roboto', sans-serif;
+
+    /* Debut section localisation */
+    & .localisation {
+        @extend %grid-center;
+        padding: 1em;
+        background: #eaeaea;
+        background: linear-gradient(180deg,
+                rgba(173, 173, 173, .35) 0%,
+                rgba(234, 234, 234, .75) 15%,
+                rgba(234, 234, 234, 1) 100%);
+
+        & i {
+            padding: 0 0.5em 0 0;
+        }
+    }
+
+    /* Fin section localisation */
+
+
+    /* Debut section presentation */
+    & .presentation {
+        @extend %grid-center;
+        @include grid-template-set(1);
+        padding: 2em 0 3em;
+        background: $gris-clair;
+        text-align: center;
+
+        & h2 {
+            padding: 0 1.8em;
+            font-size: 1.5em;
+        }
+
+        & p {
+            padding: 1em 2em 2em;
+        }
+    }
+
+    /* Fin section presentation */
+
+
+    /* Debut section commentCaMarche */
+    & .commentCaMarche {
+
+        @extend %grid-center;
+        @include grid-template-set(1);
+        padding: 3em 1em;
+        margin-bottom: 2.5em;
+
+        & h2 {
+            @include grid-pos-set (1, auto, 1, 2);
+            justify-self: start;
+        }
+
+        & ol {
+            @include grid-pos-set (2, auto, 1, 4);
+            display: grid;
+            @include grid-template-set($commentCaMarche);
+            grid-gap: 2em;
+            margin: 1em 1em 0;
+            counter-reset: countsection;
+            justify-self: normal;
+
+            @media screen and (max-width: $breakpoint-tablette) {
+                @include grid-template-set(1);
+            }
+
+            @media screen and (max-width: $breakpoint-mobile) {
+                @include grid-template-set(1);
+            }
+
+            & li::before {
+                counter-increment: countsection;
+                content: counter(countsection);
+                position: relative;
+                left: -1.9em;
+                padding: 0.3em 0.6em;
+                background-color: $violet-primaire;
+                border-radius: 70%;
+                color: $txt-fond-sombre;
+            }
+
+            & li:hover {
+                background-color: lighten($violet-primaire, 35%);
+                cursor: pointer;
+
+                & i {
+                    color: $violet-primaire;
+                }
+            }
+
+            & p {
+                display: inline-block;
+                position: relative;
+                left: -0.7em;
+            }
+
+            & i {
+                padding: 0 1.1em 0 0;
+
+            }
+        }
+
+
+    }
+
+    /* Fin section commentCaMarche */
+
+    /* Début de section restaurants */
+    & .restaurants {
+        background: $gris-clair;
+        @extend %grid-center;
+        @include grid-template-set (1);
+        padding: 3em 1em;
+
+        & h2 {
+            @include grid-pos-set (1, auto, 1, 2);
+            justify-self: start;
+            margin-bottom: 1em;
+        }
+
+        & ul {
+            @include grid-pos-set(2, auto, 1, 2);
+            display: grid;
+            @include grid-template-set(4);
+            grid-gap: 2em;
+            justify-self: normal;
+            margin: 1em 0;
+
+            @media screen and (max-width: $breakpoint-mobile) {
+                @include grid-template-set(1);
+
+            }
+
+            @media screen and (max-width: $breakpoint-tablette) {
+                @include grid-template-set(1);
+            }
+
+            & li {
+                display: inline-block;
+                width: 100%;
+
+                & a {
+                    display: block;
+                    position: relative;
+                    padding: 0 0 0.7rem 0;
+                    color: $txt-fond-clair;
+                    border-radius: 1.5em;
+                    box-shadow: 0 3px 10px rgb(0, 0, 0, 0.2);
+
+                    & .sticker {
+                        position: absolute;
+                        right: 1em;
+                        top: 1em;
+                        padding: 0.4em 0.6em;
+                        color: $txt-fond-vert;
+                        background: $vert-clair;
+                        border-radius: 0.2em;
+                    }
+
+                    & img {
+                        height: 12.5em;
+                        width: 100%;
+                        object-fit: cover;
+                        border-radius: 1em 1em 0 0;
+                        margin-bottom: 0.5em;
+                    }
+
+                    & h3,
+                    p {
+                        padding: 0 1rem 0.3rem;
+                    }
+
+
+                    & .btn__like {
+                        position: absolute;
+                        bottom: 2.5rem;
+                        right: 1.5rem;
+                        font-size: 1.5em;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Fin section restaurants */
+
+    /* Début section carte */
+
+
+
+
+
+}

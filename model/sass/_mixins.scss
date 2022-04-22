@@ -1,0 +1,14 @@
+@mixin grid-template-set($section) {
+
+    @if($section=="commentCaMarche") {
+        $section: $grid-columns-commentCaMarche;
+    }
+
+    grid-template-columns: repeat($section, 1fr);
+}
+
+//Grid position setting
+@mixin grid-pos-set ($row-start, $row-end, $col-start, $col-end) {
+    grid-row: $row-start unquote("/") $row-end;
+    grid-column: $col-start unquote("/") $col-end;
+}

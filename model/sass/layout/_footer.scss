@@ -1,0 +1,40 @@
+footer {
+
+    @extend %grid-start;
+    @include grid-template-set (3);
+    padding: 1.5em;
+    color: $txt-fond-sombre;
+    background: $gris-sombre;
+    font-family: 'Roboto', sans-serif;
+
+    & h2 {
+        @include grid-pos-set (1, auto, 1, auto);
+        margin: 0 0 1.5rem 0;
+        font-family: 'Shrikhand', cursive;
+        font-size: 1.4em;
+        font-weight: normal;
+        justify-self: start;
+    }
+
+    & ul {
+        @include grid-pos-set (2, auto, 1, 4);
+        justify-self: start;
+
+        & li {
+            margin: 0 0 0.5rem 0;
+        }
+    }
+
+    & a {
+        color: $txt-fond-sombre;
+
+        & .fa-utensils {
+            padding: 0 1rem 0 0;
+        }
+
+        & .fa-handshake-angle {
+            padding: 0 0.65rem 0 0;
+        }
+    }
+
+}

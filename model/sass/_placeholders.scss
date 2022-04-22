@@ -1,0 +1,11 @@
+%grid-center {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+%grid-start {
+    display: grid;
+    justify-items: flex-start;
+    align-items: flex-start;
+}
