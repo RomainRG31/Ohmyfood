@@ -1,38 +1,36 @@
 .list-item {
-    padding: 1.5em 1em;
-    text-align: left;
-    border-radius: 1em;
-    box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
+  padding: 1.5em 1em;
+  text-align: left;
+  border-radius: 1em;
+  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
 }
-
 
 .btn {
-    padding: 1em 1.5em;
-    color: $txt-fond-sombre;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 1em 1.5em;
+  color: $txt-fond-sombre;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
-    &--gradient {
-        background-image:
-            radial-gradient(100% 50% at 20% 10%,
-                #FF79DA 0%,
-                #9356DC 200%);
-    }
+  &--gradient {
+    background-image: radial-gradient(100% 50% at 20% 10%, #ff79da 0%, #9356dc 200%);
+  }
 
-    &--radius {
-        border-radius: 2em;
-    }
+  &--radius {
+    border-radius: 2em;
+  }
 
-    &:hover {
-        opacity: 0.8;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
+  &:hover {
+    opacity: 0.8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
 }
 
-.btn__like {
-    & .heart-away {}
+.btn__like,
+button {
+  & .heart-away {
+  }
 
-    & .heart-hover {
-        position: absolute;
-        top: 0;
-    }
+  & .heart-hover {
+    position: absolute;
+    top: 0;
+  }
 }

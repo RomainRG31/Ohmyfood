@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
-main .restaurants, main .commentCaMarche, main .presentation, main .localisation, header {
+main .menuDuResto, main .restaurants, main .commentCaMarche, main .presentation, main .localisation, header {
   display: grid;
   align-items: center;
   justify-items: center;
@@ -25,7 +25,7 @@ footer {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .btn--gradient {
-  background-image: radial-gradient(100% 50% at 20% 10%, #FF79DA 0%, #9356DC 200%);
+  background-image: radial-gradient(100% 50% at 20% 10%, #ff79da 0%, #9356dc 200%);
 }
 .btn--radius {
   border-radius: 2em;
@@ -35,14 +35,25 @@ footer {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.btn__like .heart-hover {
+.btn__like .heart-hover,
+button .heart-hover {
   position: absolute;
   top: 0;
 }
 
+header {
+  grid-template-columns: repeat(1, 1fr);
+  padding: 1em;
+}
 header h1 {
+  grid-row: 1 / auto;
+  grid-column: 1 / auto;
   font-family: "Shrikhand", cursive;
-  padding: 0.8em 0 0.3em 0;
+}
+header .btn__retourHome {
+  grid-row: 1 / auto;
+  grid-column: 1 / auto;
+  justify-self: start;
 }
 
 footer {
@@ -92,12 +103,21 @@ main {
   /* Début section carte */
 }
 main .localisation {
-  padding: 1em;
+  display: grid;
+  padding: 1em 1em 1em 3em;
   background: #eaeaea;
   background: linear-gradient(180deg, rgba(173, 173, 173, 0.35) 0%, rgba(234, 234, 234, 0.75) 15%, rgb(234, 234, 234) 100%);
 }
 main .localisation i {
-  padding: 0 0.5em 0 0;
+  padding: 0 1em 0 0;
+}
+main .localisation input {
+  border: none;
+  background: #eaeaea;
+  font-weight: 700;
+}
+main .localisation input:focus {
+  outline: none;
 }
 main .presentation {
   grid-template-columns: repeat(1, 1fr);
@@ -148,7 +168,7 @@ main .commentCaMarche ol li::before {
   position: relative;
   left: -1.9em;
   padding: 0.3em 0.6em;
-  background-color: #9356DC;
+  background-color: #9356dc;
   border-radius: 70%;
   color: #ffffff;
 }
@@ -157,7 +177,7 @@ main .commentCaMarche ol li:hover {
   cursor: pointer;
 }
 main .commentCaMarche ol li:hover i {
-  color: #9356DC;
+  color: #9356dc;
 }
 main .commentCaMarche ol p {
   display: inline-block;
@@ -231,8 +251,52 @@ main .restaurants ul li a p {
 }
 main .restaurants ul li a .btn__like {
   position: absolute;
-  bottom: 2.5rem;
+  height: 30px;
+  width: 30px;
+  bottom: 1.5em;
   right: 1.5rem;
   font-size: 1.5em;
   cursor: pointer;
+}
+main .restaurants ul li a .btn__like .fa-heart {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+main .restaurants ul li a .btn__like .far {
+  opacity: 1;
+  transition: 0.5s;
+  z-index: 2;
+}
+main .restaurants ul li a .btn__like .fas {
+  opacity: 1;
+  transition: 1.2s;
+  background-image: radial-gradient(100% 50% at 20% 10%, #ff79da 0%, #9356dc 200%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  height: 0;
+}
+main .restaurants ul li a .btn__like:hover .fas {
+  opacity: 1;
+  height: 30px;
+}
+main .restaurants ul li a .btn__like:hover .far {
+  opacity: 1;
+}
+main .menuDuResto {
+  grid-template-columns: repeat(1, 1fr);
+  padding: 0 0 3em;
+  justify-items: normal;
+  background: #f6f6f6;
+}
+main .menuDuResto__cover {
+  margin: 0 0 -5em 0;
+  width: 100%;
+  height: 20em;
+  object-fit: cover;
+}
+main .menuDuResto__carte {
+  padding: 2em 1em 0;
+  background: #f6f6f6;
+  border-radius: 3em 3em 0 0;
 }

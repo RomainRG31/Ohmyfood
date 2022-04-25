@@ -1,7 +1,7 @@
 //Couleurs principales
-$violet-primaire: #9356DC;
-$rose-secondaire: #FF79DA;
-$aqua-tertiaire: #99E2D0;
+$violet-primaire: #9356dc;
+$rose-secondaire: #ff79da;
+$aqua-tertiaire: #99e2d0;
 
 //Couleur secondaires
 $vert-clair: #99e2d0;
@@ -13,19 +13,15 @@ $txt-fond-clair: #000000;
 $txt-fond-sombre: #ffffff;
 $txt-fond-vert: #008766;
 
-
-
 $commentCaMarche: "commentCaMarche";
 $lesRestaurants: "lesRestaurants";
 $footer: "footer";
-
 
 $grid-columns-commentCaMarche: 3;
 $grid-columns-lesRestaurants: 4;
 $grid-columns-footer: 3;
 
-
 //Media
 
-$breakpoint-tablette:960px;
-$breakpoint-mobile:480px;
+$breakpoint-tablette: 960px;
+$breakpoint-mobile: 480px;
