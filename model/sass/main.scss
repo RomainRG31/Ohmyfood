@@ -320,6 +320,9 @@ main {
         flex-direction: row;
         justify-content: space-between;
 
+        &.prix {
+        }
+
         &.plat {
           display: flex;
           flex-direction: column;
