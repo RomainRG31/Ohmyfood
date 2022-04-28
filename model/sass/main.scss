@@ -24,12 +24,16 @@ main {
     }
 
     & input {
-      border: none;
       background: #eaeaea;
-      font-weight: 700;
+      border: none;
 
       &:focus {
         outline: none;
+      }
+
+      &::placeholder {
+        color: black;
+        font-weight: 700;
       }
     }
   }
@@ -45,7 +49,7 @@ main {
     text-align: center;
 
     & h2 {
-      padding: 0 1.8em;
+      padding: 0 2.3em;
       font-size: 1.5em;
     }
 
@@ -187,7 +191,7 @@ main {
             position: absolute;
             height: 30px;
             width: 30px;
-            bottom: 1.5em;
+            bottom: 1.2em;
             right: 1.5rem;
             font-size: 1.5em;
             cursor: pointer;
@@ -226,27 +230,106 @@ main {
       }
     }
   }
+  /* Fin de section resturants */
 
+  /* Début de section menuDuResto */
   & .menuDuResto {
     @extend %grid-center;
     @include grid-template-set(1);
     padding: 0 0 3em;
     justify-items: normal;
     background: #f6f6f6;
+
+    & a {
+      @extend %grid-center;
+      margin: 3em 5em 2.5em 5em;
+      justify-content: center;
+    }
+
     &__cover {
       margin: 0 0 -5em 0;
       width: 100%;
-      height: 20em;
+      height: 18em;
       object-fit: cover;
     }
     &__carte {
       padding: 2em 1em 0;
       background: #f6f6f6;
       border-radius: 3em 3em 0 0;
+
+      & h2 {
+        font-family: "Shrikhand", cursive;
+      }
+
+      & .btn__like {
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        bottom: 28.6em;
+        right: 2.5rem;
+        font-size: 1.5em;
+        cursor: pointer;
+
+        .fa-heart {
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+
+        .far {
+          opacity: 1;
+          transition: 0.5s;
+          z-index: 2;
+        }
+
+        .fas {
+          opacity: 1;
+          transition: 1.2s;
+          background-image: radial-gradient(100% 50% at 20% 10%, #ff79da 0%, #9356dc 200%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          height: 0;
+        }
+
+        &:hover .fas {
+          opacity: 1;
+          height: 30px;
+        }
+
+        &:hover .far {
+          opacity: 1;
+        }
+      }
+
+      & h3 {
+        font-weight: 100;
+        font-size: medium;
+        width: 11%;
+        border-bottom: solid 3px $vert-clair;
+        padding-bottom: 0.2em;
+        margin: 2em 0 1.2em;
+      }
+
+      & ul {
+        display: grid;
+        grid-gap: 1.2em;
+      }
+
+      & li {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &.plat {
+          display: flex;
+          flex-direction: column;
+        }
+
+        & h4 {
+          margin-bottom: 0.15em;
+        }
+      }
     }
   }
-
-  /* Fin section restaurants */
-
-  /* Début section carte */
+  /* Fin de section menuDuResto*/
 }

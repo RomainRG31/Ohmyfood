@@ -5,6 +5,21 @@
   box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
 }
 
+.list-item-plats {
+  padding: 1em 1em 0.8em 1em;
+  border-radius: 1em;
+  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
+}
+
+.prix {
+  display: flex;
+  align-items: flex-end;
+
+  & strong {
+    font-weight: 700;
+  }
+}
+
 .btn {
   padding: 1em 1.5em;
   color: $txt-fond-sombre;
@@ -24,13 +39,83 @@
   }
 }
 
-.btn__like,
-button {
-  & .heart-away {
-  }
+.loader {
+  display: flex;
+  position: fixed;
+  z-index: 3;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  animation: 1s fadeOut 3.4s ease forwards;
+}
 
-  & .heart-hover {
-    position: absolute;
-    top: 0;
+.lettre {
+  color: #fff;
+  font-size: 80px;
+  letter-spacing: 15px;
+  margin-bottom: 150px;
+  animation: flash 1s linear infinite;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    font-size: 30px;
   }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes flash {
+  0% {
+    color: $rose-secondaire;
+    text-shadow: 0 0 7px $rose-secondaire;
+  }
+  85% {
+    color: $violet-primaire;
+    text-shadow: none;
+  }
+  100% {
+    color: $rose-secondaire;
+    text-shadow: 0 0 7px $rose-secondaire;
+  }
+}
+
+.lettre:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.lettre:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.lettre:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.lettre:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.lettre:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.lettre:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.lettre:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.lettre:nth-child(8) {
+  animation-delay: 0.8s;
+}
+.lettre:nth-child(9) {
+  animation-delay: 0.9s;
+}
+.lettre:nth-child(10) {
+  animation-delay: 1s;
 }

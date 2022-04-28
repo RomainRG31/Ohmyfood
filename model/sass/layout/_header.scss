@@ -3,6 +3,11 @@ header {
   @include grid-template-set(1);
   padding: 1em;
 
+  & img {
+    height: 2em;
+    width: 11em;
+  }
+
   & h1 {
     @include grid-pos-set(1, auto, 1, auto);
     font-family: "Shrikhand", cursive;
@@ -11,5 +16,9 @@ header {
   & .btn__retourHome {
     @include grid-pos-set(1, auto, 1, auto);
     justify-self: start;
+  }
+
+  & i {
+    font-size: large;
   }
 }

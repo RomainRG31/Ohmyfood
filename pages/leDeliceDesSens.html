@@ -7,82 +7,135 @@
     <link rel="stylesheet" href="../model/css/normalize.css" />
     <link rel="stylesheet" href="../model/css/style.css" />
     <script src="https://kit.fontawesome.com/e9c27f096c.js" crossorigin="anonymous"></script>
-    <title>ohmyfood ledeliceDesSens</title>
+    <title>ohmyfood leDeliceDesSens</title>
   </head>
 
   <body>
     <!-- Début du header -->
+
     <header>
-      <a href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
       <h1>ohmyfood</h1>
-      <img src="../model/images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens - Folie-Mérincourt" />
+      <a class="btn__retourHome" href="../index.html">
+        <i class="fas fa-arrow-left"></i>
+      </a>
     </header>
+
     <!--Fin du header-->
 
-    <!--Début de la section carte-->
-    <section class="carte">
-      <h2>Le délice des sens</h2>
-      <span class="btn__like">
-        <i class="far fa-heart heart-away"></i>
-        <i class="fas fa-heart heart-hover"></i>
-      </span>
-      <h3>ENTRÉES</h3>
-      <ul>
-        <li>
-          <h4>Tartare de thon</h4>
-          <p>Assaisonné au yuzu</p>
-          <p>25€</p>
-        </li>
-        <li>
-          <h4>Bouchée de homard croustillant</h4>
-          <p>Et sa farandole de petits légumes</p>
-          <p>35€</p>
-        </li>
-        <li>
-          <h4>Velouté de cèpes</h4>
-          <p>Aux truffes</p>
-          <p>20€</p>
-        </li>
-      </ul>
-      <h3>PLATS</h3>
-      <ul>
-        <li>
-          <h4>Poulet rôti aux herbes de provence</h4>
-          <p>Et sa crème de truffe</p>
-          <p>40€</p>
-        </li>
-        <li>
-          <h4>Langouste rôtie</h4>
-          <p>Et ses légumes de saison</p>
-          <p>35€</p>
-        </li>
-        <li>
-          <h4>Côte de boeuf angus</h4>
-          <p>Et sa purée de panais</p>
-          <p>44€</p>
-        </li>
-      </ul>
-      <h3>DESSERTS</h3>
-      <ul>
-        <li>
-          <h4>Farandole de desserts</h4>
-          <p>Du chef</p>
-          <p>18€</p>
-        </li>
-        <li>
-          <h4>Crème brulée</h4>
-          <p>Revisitée</p>
-          <p>22€</p>
-        </li>
-        <li>
-          <h4>Tiramisu</h4>
-          <p>À la noisette</p>
-          <p>23€</p>
-        </li>
-      </ul>
-      <a class="btn btn--gradient btn--radius" href="#">Commander</a>
-    </section>
-    <!--Fin de la section carte-->
+    <main>
+      <!--Début de la section carte-->
+      <section class="menuDuResto">
+        <img class="menuDuResto__cover" src="../model/images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens" />
+        <div class="menuDuResto__carte">
+          <h2>Le délice des sens</h2>
+          <button class="btn__like">
+            <i class="far fa-heart heart-away"></i>
+            <i class="fas fa-heart heart-hover"></i>
+          </button>
+          <h3>ENTRÉES</h3>
+          <ul>
+            <li class="list-item-plats">
+              <div class="plat">
+                <h4>Tartare de thon</h4>
+                <p>Assaisonné au yuzu</p>
+              </div>
+              <div class="prix">
+                <strong>25€</strong>
+                <span><i class="fas fa-check-circle"></i></span>
+              </div>
+            </li>
+            <li class="list-item-plats">
+              <div class="plat">
+                <h4>Bouchée de homard croustillant</h4>
+                <p>Et sa fanfarolle de petits légumes</p>
+              </div>
+              <div class="prix">
+                <strong>35€</strong>
+                <span><i class="fas fa-check-circle"></i></span>
+              </div>
+            </li>
+            <li class="list-item-plats">
+              <div class="plat">
+                <h4>Velouté de cèpes</h4>
+                <p>Aux truffes</p>
+              </div>
+              <div class="prix">
+                <strong>20€</strong>
+                <span><i class="fas fa-check-circle"></i></span>
+              </div>
+            </li>
+          </ul>
+          <h3>PLATS</h3>
+          <ul>
+            <li class="list-item-plats">
+              <div class="plat">
+                <h4>Poulet rôti aux herbes de provence</h4>
+                <p>Et sa crème de truffe</p>
+              </div>
+              <div class="prix">
+                <strong>40€</strong>
+                <span><i class="fas fa-check-circle"></i></span>
+              </div>
+            </li>
+            <li class="list-item-plats">
+              <div class="plat">
+                <h4>Langouste rôtie</h4>
+                <p>Et ses légumes de saison</p>
+              </div>
+              <div class="prix">
+                <strong>35€</strong>
+                <span><i class="fas fa-check-circle"></i></span>
+              </div>
+            </li>
+            <li class="list-item-plats">
+              <div class="plat">
+                <h4>Côte de boeuf angus</h4>
+                <p>Et sa purée de panais</p>
+              </div>
+              <div class="prix">
+                <strong>44€</strong>
+                <span><i class="fas fa-check-circle"></i></span>
+              </div>
+            </li>
+          </ul>
+          <h3>DESSERTS</h3>
+          <ul>
+            <li class="list-item-plats">
+              <div class="plat">
+                <h4>Farandole de desserts</h4>
+                <p>Du chef</p>
+              </div>
+              <div class="prix">
+                <strong>18€</strong>
+                <span><i class="fas fa-check-circle"></i></span>
+              </div>
+            </li>
+            <li class="list-item-plats">
+              <div class="plat">
+                <h4>Crème brulée</h4>
+                <p>Revisitée</p>
+              </div>
+              <div class="prix">
+                <strong>22€</strong>
+                <span><i class="fas fa-check-circle"></i></span>
+              </div>
+            </li>
+            <li class="list-item-plats">
+              <div class="plat">
+                <h4>Tiramisu</h4>
+                <p>À la noisette</p>
+              </div>
+              <div class="prix">
+                <strong>23€</strong>
+                <span><i class="fas fa-check-circle"></i></span>
+              </div>
+            </li>
+          </ul>
+          <a class="btn btn--gradient btn--radius" href="#">Commander</a>
+        </div>
+      </section>
+      <!--Fin de la section carte-->
+    </main>
 
     <!--Début du footer-->
     <footer>
