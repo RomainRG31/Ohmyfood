@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
-main .menuDuResto a, main .menuDuResto, main .restaurants, main .commentCaMarche, main .presentation, main .localisation, header {
+main .menuDuResto, main .restaurants, main .commentCaMarche, main .presentation, main .localisation, header {
   display: grid;
   align-items: center;
   justify-items: center;
@@ -19,20 +19,105 @@ footer {
   box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
 }
 
-.list-item-plats {
+.plat {
   padding: 1em 1em 0.8em 1em;
-  border-radius: 1em;
-  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
 }
 
-.prix {
+.list-item-plats {
+  border-radius: 1em;
+  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  /* Début animation list-item-plats */
+  animation: fadeIn 1.5s forwards;
+}
+.list-item-plats--1 {
+  animation-delay: 90.9090909091ms;
+}
+.list-item-plats--2 {
+  animation-delay: 181.8181818182ms;
+}
+.list-item-plats--3 {
+  animation-delay: 272.7272727273ms;
+}
+.list-item-plats--4 {
+  animation-delay: 363.6363636364ms;
+}
+.list-item-plats--5 {
+  animation-delay: 454.5454545455ms;
+}
+.list-item-plats--6 {
+  animation-delay: 545.4545454545ms;
+}
+.list-item-plats--7 {
+  animation-delay: 636.3636363636ms;
+}
+.list-item-plats--8 {
+  animation-delay: 727.2727272727ms;
+}
+.list-item-plats--9 {
+  animation-delay: 818.1818181818ms;
+}
+.list-item-plats--10 {
+  animation-delay: 909.0909090909ms;
+}
+@keyframes fadeIn {
+  0% {
+    transform: translateY(2em);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.list-item-plats .prix {
   display: flex;
   align-items: flex-end;
 }
-.prix strong {
+.list-item-plats .prix span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: #99e2d0;
+  border-radius: 0 1em 1em 0;
+  height: 100%;
+  width: 4em;
+  margin-left: 1em;
+  position: absolute;
+  overflow: hidden;
+  right: -4em;
+}
+.list-item-plats .prix span i {
+  font-size: 1.5em;
+}
+.list-item-plats .prix strong {
   font-weight: 700;
+  font-size: small;
+  padding-bottom: 0.8em;
+  width: 80px;
+  text-align: center;
 }
 
+.list-item-plats:hover {
+  cursor: pointer;
+}
+.list-item-plats:hover span {
+  animation: check 1s both;
+}
+.list-item-plats:hover strong {
+  animation: check 1s both;
+}
+
+@keyframes check {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(-4em);
+  }
+}
+/* Fin animation list-item-plats*/
 .btn {
   padding: 1em 1.5em;
   color: #ffffff;
@@ -57,10 +142,12 @@ footer {
   justify-content: center;
   width: 100%;
   height: 100%;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9);
+  /* Début animation loader */
   animation: 1s fadeOut 3.4s ease forwards;
 }
 
+/* Fin animation loader */
 .lettre {
   color: #fff;
   font-size: 80px;
@@ -358,9 +445,9 @@ main .restaurants ul li a p {
 }
 main .restaurants ul li a .btn__like {
   position: absolute;
-  height: 30px;
+  height: 9px;
   width: 30px;
-  bottom: 1.2em;
+  bottom: 1.8em;
   right: 1.5rem;
   font-size: 1.5em;
   cursor: pointer;
@@ -373,7 +460,7 @@ main .restaurants ul li a .btn__like .fa-heart {
 main .restaurants ul li a .btn__like .far {
   opacity: 1;
   transition: 0.5s;
-  z-index: 2;
+  z-index: 0;
 }
 main .restaurants ul li a .btn__like .fas {
   opacity: 1;
@@ -396,9 +483,30 @@ main .menuDuResto {
   justify-items: normal;
   background: #f6f6f6;
 }
-main .menuDuResto a {
-  margin: 3em 5em 2.5em 5em;
-  justify-content: center;
+main .menuDuResto .commander {
+  padding: 5em 0 4em;
+}
+main .menuDuResto .commander a {
+  padding: 1em 3em;
+  font-size: 1.3em;
+}
+@media screen and (min-width: 960px) {
+  main .menuDuResto {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  main .menuDuResto img {
+    height: 100%;
+    top: -2.5em;
+    position: relative;
+    border-radius: 1em;
+  }
+  main .menuDuResto .commander {
+    padding: 5em 0 4em;
+  }
+  main .menuDuResto .commander a {
+    padding: 1em 3em;
+    font-size: 1.3em;
+  }
 }
 main .menuDuResto__cover {
   margin: 0 0 -5em 0;
@@ -410,18 +518,21 @@ main .menuDuResto__carte {
   padding: 2em 1em 0;
   background: #f6f6f6;
   border-radius: 3em 3em 0 0;
+  display: flex;
+  flex-direction: column;
 }
 main .menuDuResto__carte h2 {
   font-family: "Shrikhand", cursive;
 }
+main .menuDuResto__carte .h2-heart {
+  display: flex;
+  justify-content: space-between;
+}
 main .menuDuResto__carte .btn__like {
-  position: absolute;
-  height: 30px;
-  width: 30px;
-  bottom: 28.6em;
-  right: 2.5rem;
   font-size: 1.5em;
   cursor: pointer;
+  position: relative;
+  margin-right: 1em;
 }
 main .menuDuResto__carte .btn__like .fa-heart {
   position: absolute;
@@ -431,7 +542,7 @@ main .menuDuResto__carte .btn__like .fa-heart {
 main .menuDuResto__carte .btn__like .far {
   opacity: 1;
   transition: 0.5s;
-  z-index: 2;
+  z-index: 0;
 }
 main .menuDuResto__carte .btn__like .fas {
   opacity: 1;
@@ -468,7 +579,14 @@ main .menuDuResto__carte li {
 main .menuDuResto__carte li.plat {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 main .menuDuResto__carte li h4 {
   margin-bottom: 0.15em;
+}
+main .menuDuResto__carte li p,
+main .menuDuResto__carte li h4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
