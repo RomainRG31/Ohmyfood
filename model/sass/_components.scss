@@ -6,7 +6,12 @@
 }
 
 .plat {
-  padding: 1em 1em 0.8em 1em;
+  padding: 0.8em 0 0.8em 0.7em;
+  width: 100%;
+
+  & p {
+    font-size: 0.95em;
+  }
 }
 
 .list-item-plats {
@@ -60,7 +65,7 @@
       font-weight: 700;
       font-size: small;
       padding-bottom: 0.8em;
-      width: 80px;
+      margin-right: 1em;
       text-align: center;
     }
   }
@@ -72,8 +77,16 @@
     animation: check 1s both;
   }
 
+  & i {
+    animation: turn 1s both;
+  }
+
   & strong {
     animation: check 1s both;
+  }
+
+  & p {
+    width: 80%;
   }
 }
 
@@ -86,7 +99,14 @@
   }
 }
 
-/* Fin animation list-item-plats*/
+@keyframes turn {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 .btn {
   padding: 1em 1.5em;

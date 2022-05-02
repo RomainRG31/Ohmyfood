@@ -20,7 +20,11 @@ footer {
 }
 
 .plat {
-  padding: 1em 1em 0.8em 1em;
+  padding: 0.8em 0 0.8em 0.7em;
+  width: 100%;
+}
+.plat p {
+  font-size: 0.95em;
 }
 
 .list-item-plats {
@@ -95,7 +99,7 @@ footer {
   font-weight: 700;
   font-size: small;
   padding-bottom: 0.8em;
-  width: 80px;
+  margin-right: 1em;
   text-align: center;
 }
 
@@ -105,8 +109,14 @@ footer {
 .list-item-plats:hover span {
   animation: check 1s both;
 }
+.list-item-plats:hover i {
+  animation: turn 1s both;
+}
 .list-item-plats:hover strong {
   animation: check 1s both;
+}
+.list-item-plats:hover p {
+  width: 80%;
 }
 
 @keyframes check {
@@ -117,7 +127,14 @@ footer {
     transform: translate(-4em);
   }
 }
-/* Fin animation list-item-plats*/
+@keyframes turn {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .btn {
   padding: 1em 1.5em;
   color: #ffffff;
@@ -515,7 +532,7 @@ main .menuDuResto__cover {
   object-fit: cover;
 }
 main .menuDuResto__carte {
-  padding: 2em 1em 0;
+  padding: 2em 0.8em 0;
   background: #f6f6f6;
   border-radius: 3em 3em 0 0;
   display: flex;
@@ -568,25 +585,25 @@ main .menuDuResto__carte h3 {
   margin: 2em 0 1.2em;
 }
 main .menuDuResto__carte ul {
-  display: grid;
-  grid-gap: 1.2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 14em;
 }
 main .menuDuResto__carte li {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+main .menuDuResto__carte li p {
+  font-size: 1em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 85%;
+  overflow: hidden;
+  transition: all 0.5s;
+}
 main .menuDuResto__carte li.plat {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-}
-main .menuDuResto__carte li h4 {
-  margin-bottom: 0.15em;
-}
-main .menuDuResto__carte li p,
-main .menuDuResto__carte li h4 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }

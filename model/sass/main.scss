@@ -277,7 +277,7 @@ main {
     }
 
     &__carte {
-      padding: 2em 1em 0;
+      padding: 2em 0.8em 0;
       background: #f6f6f6;
       border-radius: 3em 3em 0 0;
       display: flex;
@@ -339,8 +339,10 @@ main {
       }
 
       & ul {
-        display: grid;
-        grid-gap: 1.2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 14em;
       }
 
       & li {
@@ -348,24 +350,18 @@ main {
         flex-direction: row;
         justify-content: space-between;
 
-        &.prix {
+        & p {
+          font-size: 1em;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 85%;
+          overflow: hidden;
+          transition: all 0.5s;
         }
 
         &.plat {
           display: flex;
           flex-direction: column;
-          overflow: hidden;
-        }
-
-        & h4 {
-          margin-bottom: 0.15em;
-        }
-
-        & p,
-        h4 {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
         }
       }
     }
