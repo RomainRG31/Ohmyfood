@@ -276,15 +276,6 @@ main {
           &.plat {
             display: flex;
             flex-direction: column;
-
-            & p {
-              font-size: 1em;
-              text-overflow: ellipsis;
-              white-space: nowrap;
-              width: 85%;
-              overflow: hidden;
-              transition: all 0.5s;
-            }
           }
         }
       }

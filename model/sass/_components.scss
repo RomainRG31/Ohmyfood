@@ -8,9 +8,16 @@
 .plat {
   padding: 0.8em 0 0.8em 0.7em;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 
   & p {
-    font-size: 0.95em;
+    font-size: 1em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 88%;
+    overflow: hidden;
+    transition: all 0.5s;
   }
 }
 

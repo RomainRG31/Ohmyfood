@@ -22,9 +22,16 @@ footer {
 .plat {
   padding: 0.8em 0 0.8em 0.7em;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .plat p {
-  font-size: 0.95em;
+  font-size: 1em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 88%;
+  overflow: hidden;
+  transition: all 0.5s;
 }
 
 .menuDuResto__header {
@@ -578,14 +585,6 @@ main .menuDuResto__carte ul li {
 main .menuDuResto__carte ul li.plat {
   display: flex;
   flex-direction: column;
-}
-main .menuDuResto__carte ul li.plat p {
-  font-size: 1em;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 85%;
-  overflow: hidden;
-  transition: all 0.5s;
 }
 main .commander {
   display: flex;
