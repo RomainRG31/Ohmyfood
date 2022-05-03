@@ -18,6 +18,7 @@
     width: 88%;
     overflow: hidden;
     transition: all 0.5s;
+  }
 }
 
 .menuDuResto__header {
@@ -77,7 +78,7 @@ button:hover {
 
   /* Début animation list-item-plats */
   animation: fadeIn 1.5s forwards;
-  @for $i from 1 to 11 {
+  @for $i from 1 through 11 {
     &--#{$i} {
       animation-delay: calc((1000ms / 11) * $i);
     }
@@ -214,6 +215,12 @@ button:hover {
   }
 }
 
+@for $i from 1 through 10 {
+  .lettre:nth-child(#{$i}) {
+    animation-delay: 0.1s * $i;
+  }
+}
+
 @keyframes fadeOut {
   from {
     opacity: 1;
@@ -237,36 +244,4 @@ button:hover {
     color: $rose-secondaire;
     text-shadow: 0 0 7px $rose-secondaire;
   }
-}
-
-.lettre:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.lettre:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.lettre:nth-child(3) {
-  animation-delay: 0.3s;
-}
-.lettre:nth-child(4) {
-  animation-delay: 0.4s;
-}
-.lettre:nth-child(5) {
-  animation-delay: 0.5s;
-}
-.lettre:nth-child(6) {
-  animation-delay: 0.6s;
-}
-.lettre:nth-child(7) {
-  animation-delay: 0.7s;
-}
-.lettre:nth-child(8) {
-  animation-delay: 0.8s;
-}
-.lettre:nth-child(9) {
-  animation-delay: 0.9s;
-}
-.lettre:nth-child(10) {
-  animation-delay: 1s;
 }
