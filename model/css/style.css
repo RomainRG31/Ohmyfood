@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
-main .menuDuResto, main .restaurants, main .commentCaMarche, main .presentation, main .localisation, header {
+main .menuDuResto, main .restaurants, main .commentCaMarche, main .presentation, main .localisation {
   display: grid;
   align-items: center;
   justify-items: center;
@@ -25,6 +25,56 @@ footer {
 }
 .plat p {
   font-size: 0.95em;
+}
+
+.menuDuResto__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 2.5em;
+}
+.menuDuResto__header i {
+  font-size: 2em;
+}
+.menuDuResto__header button {
+  padding-right: 2em;
+}
+
+.btn__like,
+button {
+  position: relative;
+}
+.btn__like .heart-away,
+button .heart-away {
+  display: block;
+  transform: scale(1);
+  transition: all 0.5s;
+}
+.btn__like .heart-hover,
+button .heart-hover {
+  display: block;
+  position: absolute;
+  top: 0;
+  transform: scale(0);
+  transition: all 0.5s;
+  background-color: black;
+  background-image: linear-gradient(0deg, #ff79da, #9356dc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.btn__like:hover .heart-away,
+button:hover .heart-away {
+  opacity: 0;
+  transform: scale(0);
+}
+.btn__like:hover .heart-hover,
+button:hover .heart-hover {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .list-item-plats {
@@ -242,25 +292,21 @@ footer {
 }
 
 header {
-  grid-template-columns: repeat(1, 1fr);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 1em;
 }
 header img {
   height: 2em;
   width: 11em;
 }
-header h1 {
-  grid-row: 1 / auto;
-  grid-column: 1 / auto;
-  font-family: "Shrikhand", cursive;
-}
 header .btn__retourHome {
-  grid-row: 1 / auto;
-  grid-column: 1 / auto;
-  justify-self: start;
+  position: absolute;
+  left: 1em;
 }
 header i {
-  font-size: large;
+  font-size: 1.5em;
 }
 
 footer {
@@ -297,6 +343,7 @@ footer a .fa-handshake-angle {
   padding: 0 0.65rem 0 0;
 }
 
+/* Début du main */
 main {
   font-family: "Roboto", sans-serif;
   /* Debut section localisation */
@@ -386,6 +433,7 @@ main .commentCaMarche ol li::before {
 main .commentCaMarche ol li:hover {
   background-color: #f2eafb;
   cursor: pointer;
+  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.4);
 }
 main .commentCaMarche ol li:hover i {
   color: #9356dc;
@@ -462,119 +510,49 @@ main .restaurants ul li a p {
 }
 main .restaurants ul li a .btn__like {
   position: absolute;
-  height: 9px;
-  width: 30px;
-  bottom: 1.8em;
+  bottom: 2.2rem;
   right: 1.5rem;
   font-size: 1.5em;
   cursor: pointer;
 }
-main .restaurants ul li a .btn__like .fa-heart {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-main .restaurants ul li a .btn__like .far {
-  opacity: 1;
-  transition: 0.5s;
-  z-index: 0;
-}
-main .restaurants ul li a .btn__like .fas {
-  opacity: 1;
-  transition: 1.2s;
-  background-image: radial-gradient(100% 50% at 20% 10%, #ff79da 0%, #9356dc 200%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  height: 0;
-}
-main .restaurants ul li a .btn__like:hover .fas {
-  opacity: 1;
-  height: 30px;
-}
-main .restaurants ul li a .btn__like:hover .far {
-  opacity: 1;
-}
 main .menuDuResto {
   grid-template-columns: repeat(1, 1fr);
-  padding: 0 0 3em;
   justify-items: normal;
   background: #f6f6f6;
-}
-main .menuDuResto .commander {
-  padding: 5em 0 4em;
-}
-main .menuDuResto .commander a {
-  padding: 1em 3em;
-  font-size: 1.3em;
 }
 @media screen and (min-width: 960px) {
   main .menuDuResto {
     grid-template-columns: repeat(2, 1fr);
   }
+  main .menuDuResto button {
+    margin: 0 0 0 7em;
+  }
   main .menuDuResto img {
-    height: 100%;
+    height: 93%;
     top: -2.5em;
     position: relative;
     border-radius: 1em;
-  }
-  main .menuDuResto .commander {
-    padding: 5em 0 4em;
-  }
-  main .menuDuResto .commander a {
-    padding: 1em 3em;
-    font-size: 1.3em;
   }
 }
 main .menuDuResto__cover {
   margin: 0 0 -5em 0;
   width: 100%;
-  height: 18em;
+  height: 20em;
   object-fit: cover;
 }
 main .menuDuResto__carte {
-  padding: 2em 0.8em 0;
+  padding: 2em 1em 0;
   background: #f6f6f6;
   border-radius: 3em 3em 0 0;
-  display: flex;
-  flex-direction: column;
 }
 main .menuDuResto__carte h2 {
   font-family: "Shrikhand", cursive;
+  font-size: 1.7em;
 }
-main .menuDuResto__carte .h2-heart {
-  display: flex;
-  justify-content: space-between;
-}
-main .menuDuResto__carte .btn__like {
-  font-size: 1.5em;
-  cursor: pointer;
+main .menuDuResto__carte h2 button {
+  margin: 0 0 0 3em;
+  font-size: 1em;
   position: relative;
-  margin-right: 1em;
-}
-main .menuDuResto__carte .btn__like .fa-heart {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-main .menuDuResto__carte .btn__like .far {
-  opacity: 1;
-  transition: 0.5s;
-  z-index: 0;
-}
-main .menuDuResto__carte .btn__like .fas {
-  opacity: 1;
-  transition: 1.2s;
-  background-image: radial-gradient(100% 50% at 20% 10%, #ff79da 0%, #9356dc 200%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  height: 0;
-}
-main .menuDuResto__carte .btn__like:hover .fas {
-  opacity: 1;
-  height: 30px;
-}
-main .menuDuResto__carte .btn__like:hover .far {
-  opacity: 1;
 }
 main .menuDuResto__carte h3 {
   font-weight: 100;
@@ -588,14 +566,20 @@ main .menuDuResto__carte ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 14em;
+  gap: 1.5em;
+  margin: 1em 0 2.5em;
+  justify-self: normal;
 }
-main .menuDuResto__carte li {
+main .menuDuResto__carte ul li {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-main .menuDuResto__carte li p {
+main .menuDuResto__carte ul li.plat {
+  display: flex;
+  flex-direction: column;
+}
+main .menuDuResto__carte ul li.plat p {
   font-size: 1em;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -603,7 +587,18 @@ main .menuDuResto__carte li p {
   overflow: hidden;
   transition: all 0.5s;
 }
-main .menuDuResto__carte li.plat {
+main .commander {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  width: 100%;
+  padding-bottom: 4em;
+  background: #f6f6f6;
 }
+main .commander a {
+  padding: 1em 2.5em;
+  justify-self: center;
+}
+
+/* Fin du main */

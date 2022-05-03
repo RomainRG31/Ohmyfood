@@ -9,3 +9,9 @@
   justify-items: flex-start;
   align-items: flex-start;
 }
+
+%flex-row-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

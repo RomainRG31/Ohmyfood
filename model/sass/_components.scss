@@ -14,6 +14,56 @@
   }
 }
 
+.menuDuResto__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 2.5em;
+
+  & i {
+    font-size: 2em;
+  }
+  & button {
+    padding-right: 2em;
+  }
+}
+
+.btn__like,
+button {
+  position: relative;
+
+  & .heart-away {
+    display: block;
+    transform: scale(1);
+    transition: all 0.5s;
+  }
+  & .heart-hover {
+    display: block;
+    position: absolute;
+    top: 0;
+    transform: scale(0);
+    transition: all 0.5s;
+    background-color: black;
+    background-image: linear-gradient(0deg, $rose-secondaire, $violet-primaire);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+  }
+}
+.btn__like:hover,
+button:hover {
+  & .heart-away {
+    opacity: 0;
+    transform: scale(0);
+  }
+  & .heart-hover {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .list-item-plats {
   border-radius: 1em;
   box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
@@ -114,7 +164,11 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
   &--gradient {
-    background-image: radial-gradient(100% 50% at 20% 10%, #ff79da 0%, #9356dc 200%);
+    background-image: radial-gradient(
+      100% 50% at 20% 10%,
+      #ff79da 0%,
+      #9356dc 200%
+    );
   }
 
   &--radius {

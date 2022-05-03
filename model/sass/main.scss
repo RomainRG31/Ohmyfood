@@ -2,12 +2,12 @@
 @import "_mixins";
 @import "_placeholders";
 @import "_components";
-
 @import "layout/header";
 @import "layout/footer";
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
 
+/* Début du main */
 main {
   font-family: "Roboto", sans-serif;
 
@@ -17,7 +17,12 @@ main {
     display: grid;
     padding: 1em 1em 1em 3em;
     background: #eaeaea;
-    background: linear-gradient(180deg, rgba(173, 173, 173, 0.35) 0%, rgba(234, 234, 234, 0.75) 15%, rgba(234, 234, 234, 1) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(173, 173, 173, 0.35) 0%,
+      rgba(234, 234, 234, 0.75) 15%,
+      rgba(234, 234, 234, 1) 100%
+    );
 
     & i {
       padding: 0 1em 0 0;
@@ -103,6 +108,7 @@ main {
       & li:hover {
         background-color: lighten($violet-primaire, 35%);
         cursor: pointer;
+        box-shadow: 0 4px 11px rgb(0 0 0 / 40%);
 
         & i {
           color: $violet-primaire;
@@ -189,42 +195,10 @@ main {
 
           & .btn__like {
             position: absolute;
-            height: 9px;
-            width: 30px;
-            bottom: 1.8em;
+            bottom: 2.2rem;
             right: 1.5rem;
             font-size: 1.5em;
             cursor: pointer;
-
-            .fa-heart {
-              position: absolute;
-              top: 0;
-              right: 0;
-            }
-
-            .far {
-              opacity: 1;
-              transition: 0.5s;
-              z-index: 0;
-            }
-
-            .fas {
-              opacity: 1;
-              transition: 1.2s;
-              background-image: radial-gradient(100% 50% at 20% 10%, #ff79da 0%, #9356dc 200%);
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
-              height: 0;
-            }
-
-            &:hover .fas {
-              opacity: 1;
-              height: 30px;
-            }
-
-            &:hover .far {
-              opacity: 1;
-            }
           }
         }
       }
@@ -236,96 +210,44 @@ main {
   & .menuDuResto {
     @extend %grid-center;
     @include grid-template-set(1);
-    padding: 0 0 3em;
     justify-items: normal;
     background: #f6f6f6;
-
-    & .commander {
-      padding: 5em 0 4em;
-
-      & a {
-        padding: 1em 3em;
-        font-size: 1.3em;
-      }
-    }
 
     @media screen and (min-width: $breakpoint-tablette) {
       @include grid-template-set(2);
 
+      & button {
+        margin: 0 0 0 7em;
+      }
+
       & img {
-        height: 100%;
+        height: 93%;
         top: -2.5em;
         position: relative;
         border-radius: 1em;
-      }
-
-      & .commander {
-        padding: 5em 0 4em;
-
-        & a {
-          padding: 1em 3em;
-          font-size: 1.3em;
-        }
       }
     }
 
     &__cover {
       margin: 0 0 -5em 0;
       width: 100%;
-      height: 18em;
+      height: 20em;
       object-fit: cover;
     }
 
     &__carte {
-      padding: 2em 0.8em 0;
+      padding: 2em 1em 0;
       background: #f6f6f6;
       border-radius: 3em 3em 0 0;
-      display: flex;
-      flex-direction: column;
 
       & h2 {
         font-family: "Shrikhand", cursive;
-      }
+        font-size: 1.7em;
 
-      & .h2-heart {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      & .btn__like {
-        font-size: 1.5em;
-        cursor: pointer;
-        position: relative;
-        margin-right: 1em;
-
-        .fa-heart {
-          position: absolute;
-          top: 0;
-          right: 0;
-        }
-
-        .far {
-          opacity: 1;
-          transition: 0.5s;
-          z-index: 0;
-        }
-
-        .fas {
-          opacity: 1;
-          transition: 1.2s;
-          background-image: radial-gradient(100% 50% at 20% 10%, #ff79da 0%, #9356dc 200%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          height: 0;
-        }
-
-        &:hover .fas {
-          opacity: 1;
-          height: 30px;
-        }
-
-        &:hover .far {
-          opacity: 1;
+        & button {
+          margin: 0 0 0 3em;
+          font-size: 1em;
+          position: relative;
         }
       }
 
@@ -342,29 +264,47 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 14em;
-      }
+        gap: 1.5em;
+        margin: 1em 0 2.5em;
+        justify-self: normal;
 
-      & li {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-
-        & p {
-          font-size: 1em;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          width: 85%;
-          overflow: hidden;
-          transition: all 0.5s;
-        }
-
-        &.plat {
+        & li {
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
+          justify-content: space-between;
+
+          &.plat {
+            display: flex;
+            flex-direction: column;
+
+            & p {
+              font-size: 1em;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              width: 85%;
+              overflow: hidden;
+              transition: all 0.5s;
+            }
+          }
         }
       }
     }
   }
+
+  & .commander {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    width: 100%;
+    padding-bottom: 4em;
+    background: #f6f6f6;
+
+    & a {
+      padding: 1em 2.5em;
+      justify-self: center;
+    }
+  }
   /* Fin de section menuDuResto*/
 }
+/* Fin du main */
