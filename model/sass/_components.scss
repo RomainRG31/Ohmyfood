@@ -19,6 +19,14 @@
     overflow: hidden;
     transition: all 0.5s;
   }
+
+  & h4 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 88%;
+    overflow: hidden;
+    transition: all 0.5s;
+  }
 }
 
 .menuDuResto__header {
